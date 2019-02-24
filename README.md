@@ -1,44 +1,60 @@
-# MERN Quickstart
+# MongoDB, Express, React, Node (MERN) Stack Quickstart
 
-One of the hardest parts about getting started with web development is to figure out which technologies to learn.
+[Alan L. Wong](https://captainalan.github.io)  
+Last updated: February 2018  
+Version 0.0.2  
 
-In this tutorial, we will use the MERN stack (**MongoDB** **Express** **React** **Node**) to build a web app.
+One of the hardest parts about getting started with web development is to figure out which technologies to learn. In this tutorial, we will use the MERN stack (**MongoDB** **Express** **React** **Node**) to build a web app. Each of these technologies will be discussed further below.
 
-(Note on what a "technology stack" is)
+![Screenshot](client-screenshot.png)
+
+This tutorial borrows heavily from ["Let's build a full stack of MongoDB, React, Node, and Express (MERN) app"](https://medium.com/javascript-in-plain-english/full-stack-mongodb-react-node-js-express-js-in-one-simple-app-6cc8ed6de274) by [jelo rivera](https://medium.com/@jelorivera08). Here, I add more explanations than that tutorial provides for a less experienced web developer (that is, what I've learned working through bugs 🙃).
 
 ## Prerequisites
 
-### HTML & CSS
+Basic working knowledge of HTML, CSS, and vanilla JavaScript is presumed. Also, you should have **MongoDB**, **Node**, and **`create-react-app`** installed. (Other things can be installed via `npm`). Some basic knowledge of React will help with the front end stuff, which I won't explain in great detail.
 
-HTML tells the browser *what* content to display. CSS tells the browser *how* to display that content.
+Finally, I will assume familiarity with common actions like navigating directories, creating new files, etc. This tutorial was made on Windows (10), but the approach here should work on Linux, MacOS, or wherever else Node can be found.
 
-### Things to have installed
+## 1. First Steps
 
-- Node
+Make a new directory for your project. From the command line within that directory, initialize a Node repository.
 
-### JavaScript
+```cmd
+> npm init
+```
 
-On the client side, JavaScript adds interactivity.
+Follow the instructions that come up as Node instructs you to.
 
-## First Steps with `npm`
-
-Make a new directory for your project.
-
-(Folder hierarchy here)
+Let's install one tool to help us in the development process. `nodemon` automatically monitors files for change and refreshes your development server so you can see changes as you edit your files.
 
 ```bash
 npm install nodemon --save-dev
 ```
+Create a file called `server.js` in the root directory.
 
-## Routing With Express
+Open `package.json` and add the line that begins with "dev" under "scripts"
+
+    ...
+    "scripts": {
+      "dev": "nodemon server.js",
+    ...
+
+## 2. Routing With Express
+
+(INCOMPLETE)
 
 Other things we'll install with `npm`
 
 - express
 - body-parser
 - mongodb
+- morgan (logging)
+- cors (temporary fix for cross origin req blocking)
 
-## MongoDB
+## 3. MongoDB
+
+(INCOMPLETE)
 
 We'll make a local database.
 
@@ -78,35 +94,34 @@ Let's make a database called "quibbles".
 > use quibbles
 ```
 
-Return to `server.js` and add this right after all of your `require` statments. 
-
-```javascript
-/*...other require()s*/
-const MongoClient = require('mongodb').MongoClient
-const app = express();
-
-// set up MongoDB
-let db;
-
-MongoClient.connect('mongodb://localhost:27017/quibbles', (err, client) => {
-    if (err) return console.log(err);
-    db = client.db('quibbles') // Our DB name
-})
-```
-
-(Note on moving `app.listen` statement to MongoClient connect callback)
-
-On the `test.html` form, I entered "foo" for the *name* field and "bar" for the *quibble* field. "saved to database" was logged to the terminal running `node`.
-
-From the mongo shell (`mongo.exe`, *not* `mongod.exe` on Windows), I can verify the entry I just made.
+Data is put into the "datas" collection (by default?).
 
 ```mongo
-> db["quibbles"].find()
+> db["datas"].find()
 ```
 
-Making this query returns an object with the values we submitted through the form.
+## 4. React
+
+We'll add React by using `create-react-app` (links to how to install that and stuff).
+
+```cmd
+create-react-app client && cd client
+```
+
+## 5. Putting everything together
+
+You need three servers running.
+
+1. MongoDB (`mongod`)
+2. Express Server (`node server.js` from the root directory)
+3. Client (run `npm start` from the `/client` subdirectory)
+
+Interacting with the React SPA, you should be able to do basic CRUD operations, which will be saved in whatever MongoDB you are connected to.
 
 
 ## References
 
 - [Creating a Simple CRUD Application with Express and MongoDB](https://zellwk.com/blog/crud-express-mongodb/) (Zell 2016)
+- [Let's build a full stack MongoDB, React, Node and Express (MERN) app](https://medium.com/javascript-in-plain-english/full-stack-mongodb-react-node-js-express-js-in-one-simple-app-6cc8ed6de274) (jelo rivera 2018)
+
+Additionally, I made use of the official docs for all of the technologies used in this tutorial (Node, Express, React, MongoDB, etc.).

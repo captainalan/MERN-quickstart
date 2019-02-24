@@ -13,12 +13,23 @@
   <body>
     <h1>Hello, world!</h1>
     <p>We can route to a React page later.</p>
+    <p>Let's nitpick.</p>
 
-    <form action="/quibbles" method="POST">
-        <input type="text" placeholder="name" name="name">
+    <form action="/api/postData" method="POST">
+        <label for="title">Title</label>
+        <input type="text" placeholder="title" name="title">
+        <label for="name">Name</label>
+        <input type="text" placeholder="name" name="name"><br />
+        <label for="quibble">Quibble</label>
         <input type="text" placeholder="quibble" name="quibble">
         <button type="submit">Submit</button>
     </form>
+
+    <p>As of now, I'm requiring a manual entry of a unique ID... this should be handled on the backend.</p>
+
+    <hr>
+    <h2>Stuff people have quibbled about</h2>
+    <p>Below are the things stored in the database.</p>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
