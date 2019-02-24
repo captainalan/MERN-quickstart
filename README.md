@@ -6,7 +6,7 @@ Version 0.0.2
 
 One of the hardest parts about getting started with web development is to figure out which technologies to learn. In this tutorial, we will use the MERN stack (**MongoDB** **Express** **React** **Node**) to build a web app. Each of these technologies will be discussed further below.
 
-![Screenshot](client-screenshot.png)
+![Screenshot](https://github.com/captainalan/MERN-quickstart/blob/master/client-screenshot.PNG)
 
 This tutorial borrows heavily from ["Let's build a full stack of MongoDB, React, Node, and Express (MERN) app"](https://medium.com/javascript-in-plain-english/full-stack-mongodb-react-node-js-express-js-in-one-simple-app-6cc8ed6de274) by [jelo rivera](https://medium.com/@jelorivera08). Here, I add more explanations than that tutorial provides for a less experienced web developer (that is, what I've learned working through bugs 🙃).
 
