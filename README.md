@@ -47,13 +47,21 @@ After you type some code into `server.js` you can run a developer server via `np
 
 ## 2. Routing With Express
 
-Express describes itself as a "web application framework for Node.js". What does that mean?
+(Introduce [HTTP Requests](https://www.google.com/search?q=http+requests&rlz=1C1CHBF_enUS818US818&oq=http+requests&aqs=chrome..69i57j0l5.8664j0j7&sourceid=chrome&ie=UTF-8); high level introduction of what we are doing with Express)
 
-In short, Express makes doing many tasks that can be done with plain Node.js code (such as creating a server) considerably easier. You can do more with fewer lines of code using Express.
+Express describes itself as a "web application framework for Node.js". What does that mean? In short, Express makes doing many tasks that can be done with plain Node.js code easier. You can do more with fewer lines of code using Express.
+
+In the file `server.js`, we will write some code to handle some HTTP requests.
 
 ```javascript
 // Code for adding express things here
 ```
+
+(Some remarks on callback functions, "javascriptisms")
+
+### More Middlewares
+
+(Introduce the concept of "Middleware" in Express)
 
 Just as we were able to install Express using one `require` statement, other tools are easily installed as well.
 
@@ -67,9 +75,9 @@ Other things we'll install with `npm`
 
 ## 3. MongoDB
 
-So far, we've been doing everything with just one server. One might say we did a bit of "server side programming". Now, we are going to add another server to the mix. This time, it is a database. Rather than use an already online database, we'll go through the steps for making a local database in which we can store persistent data.
+(Introduce databases)
 
-(INCOMPLETE)
+So far, we've been doing everything with just one server. One might say we did a bit of "server side programming". Now, we are going to add another server to the mix. This time, it is a database. Rather than use an already online database, we'll go through the steps for making a local database in which we can store persistent data.
 
 Set up MongoDB according to the official instructions (I'll be doing this on [Windows](https://docs.mongodb.com/v3.2/tutorial/install-mongodb-on-windows/)).
 
@@ -127,7 +135,7 @@ create-react-app client && cd client
 
 ## 5. Putting everything together
 
-You need three servers running.
+Altogether, you will need three servers running.
 
 1. MongoDB (`mongod`)
 2. Express Server (`node server.js` from the root directory)
