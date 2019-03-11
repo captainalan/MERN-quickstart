@@ -1,14 +1,16 @@
 # MongoDB, Express, React, Node (MERN) Stack Quickstart
 
 [Alan L. Wong](https://captainalan.github.io)  
-Last updated: February 2018  
-Version 0.0.3  
+Last updated: March 2019  
+Version 0.0.4  
 
-One of the hardest parts about getting started with web development is to figure out which technologies to learn. In this tutorial, we will use the MERN stack (**MongoDB** **Express** **React** **Node**) to build a web app. Each of these technologies will be discussed further below. This tutorial is not an in depth dive into any one of these technologies. Rather, it is a relatively high-level overview of how each of these components fit together to make a more complete picture.
+One of the hardest parts about getting started with web development is to figure out which technologies to learn. In this tutorial, we will use the **MERN** stack (**MongoDB** **Express** **React** **Node**) to build a web app. Each of these technologies will be discussed further below. This tutorial is not an in depth dive into any one of these technologies. Rather, it is a relatively high-level overview of how each of these components fit together to make a more complete picture.
+
+The particulars of how things are set up may change as software is updated, new tools are added, and so on. This document will therefore focus on *what* is being done (conceptually) and *why* that particular approach is being taken rather than the detailed ins and outs of each operation, which are best left to the official documentations of those specific technologies.
 
 ![Screenshot](https://github.com/captainalan/MERN-quickstart/blob/master/client-screenshot.PNG)
 
-This tutorial borrows heavily from ["Let's build a full stack of MongoDB, React, Node, and Express (MERN) app"](https://medium.com/javascript-in-plain-english/full-stack-mongodb-react-node-js-express-js-in-one-simple-app-6cc8ed6de274) by [jelo rivera](https://medium.com/@jelorivera08). Here, I add more explanations than that tutorial provides for a less experienced web developer (that is, what I've learned working through building this repo 🙃).
+The code in this tutorial borrows heavily from ["Let's build a full stack of MongoDB, React, Node, and Express (MERN) app"](https://medium.com/javascript-in-plain-english/full-stack-mongodb-react-node-js-express-js-in-one-simple-app-6cc8ed6de274) by [jelo rivera](https://medium.com/@jelorivera08). My contribution is to add more explanations for a less experienced web developer (that is, insights I've come across through building this repo 🙃).
 
 ## Prerequisites
 
@@ -34,16 +36,20 @@ Let's install one tool to help us in the development process. `nodemon` automati
 npm install nodemon --save-dev
 ```
 
-Create a file called `server.js` in the root directory.
+In the command above, notice the flag `--save-dev`. We are installinga nd using `nodemon` for the *development* process, but in *production* (when we publish/use our app) it is no longer necessary. On the other hand, some other things we will be installing (e.g. Express) we will need both in development and production.
 
-Open `package.json` and add the line that begins with "dev" under "scripts"
+Next, create a file called `server.js` in the root directory. (DESCRIBE THE PURPOSE OF THIS FILE).
+
+Now we will write a (very short) script to make development easier. Open `package.json` and add the line that begins with "dev" under "scripts"
 
     ...
     "scripts": {
       "dev": "nodemon server.js",
     ...
 
-After you type some code into `server.js` you can run a developer server via `npm run dev`. Let's go update `server.js` now.
+After you type some code into `server.js` you can run a developer server via `npm run dev`. Note that `package.json` is just an ordinary `json` file and that our script ammounts to typing a string that you would type into a terminal. Not even that bad!
+
+Okay, let's go update `server.js` now.
 
 ## 2. Routing With Express
 
